@@ -29,6 +29,7 @@
       flex-direction: column;
       text-align: center;
       overflow-x: hidden;
+      transition: transform 0.2s ease-out;
     }
     .glass-card {
       background: var(--glass);
@@ -40,6 +41,7 @@
       backdrop-filter: blur(var(--blur));
       box-shadow: 0 8px 32px rgba(0,0,0,0.3);
       animation: fadeIn 1.2s ease-in-out;
+      z-index: 2;
     }
     h1 {
       font-size: 3rem;
@@ -112,5 +114,12 @@
   <footer>
     &copy; 2025 KhanhsDuy — Built with ❤️ and GitHub Pages
   </footer>
+  <script>
+    document.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 10;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+      document.body.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
 </body>
 </html>
